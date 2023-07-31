@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="generator" content="Hugo 0.88.1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+	<link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" href="css/normalize.css">
+
+	<title>RDLR</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+            table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 10px;
+      text-align: center;
+    }
+    .button {
+      margin: 5px;
+    }
+        .active {
+          background-color: green;
+          color: white;
+        }
+        .hidden {
+      display: none;
+    }
+    .green-text {
+      color: green;
+    }
+      </style>
+
+
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1091.0" data-gr-ext-installed="">
+
+<div class="container" >
+<header role="banner">
+</header>
+<main role="main">
+<article itemscope itemtype="https://schema.org/BlogPosting">
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+	<div class="text-center">
+	<h1>Speech Emotion Recognition Incorporating Relative Difficulty and Labeling Reliability</h1>
+        <h3>Guess emotional state for the utterance-level speech</h3>
+        <p class="fst-italic mb-0">
+          <br>
+          Youngdo Ahn<sup>1</sup>, Sangwook Han<sup>1</sup>, Seonggyu Lee<sup>1</sup>, Jeom Ja Kang<sup>2</sup>, and Jong Won Shin<sup>1</sup>
+			<br>
+			<p><b><sup>1</sup>Gwangju Institute of Science and Technology, Korea, <sup>2</sup>Electronics and Telecommunications Research Institute, Korea
+            </b>
+        </p>
+	</div>
+	<p>
+        <!-- <b>Abstract.</b>  -->
+        <!-- %-. -->
+
+        <br>This experiment shows the difficulty of utterance-level speech recognition with datasets, labeled for the audio-visual data.<br>
+        This page is for <b>research demonstration purposes</b> only.<br>
+      </p>
+</div>
+		
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+	<h2 id="cremad-samples" style="text-align: center;">CREMA-D examples</h2>
+    <p>      Each example is annotated by around 30 evaluators. <br>
+        Evaluators watched the utterance-level video and labeled among "anger (<b>A</b>), disgust (<b>D</b>), fear (<b>F</b>), happy (<b>H</b>), neutral (<b>N</b>), sad (<b>S</b>)". 
+        <br><b>True label</b> stands for the majority vote result of the evaluations. <br>
+        Please guess the emotion label after listening to "<b>Speech only</b>" to watching "<b>Video</b>" respectively, and then compare your labels with the "<b>True label</b>".<br>
+    </p>
+		<div class="table-responsive pt-3">
+			<table class="table table-hover pt-2">
+			<thead>
+			<tr>
+			<th style="text-align: center">Video name (Speaker_Sentence)</th>
+			<th style="text-align: center">Speech only</th>
+			<th class="green-text" style="text-align: center">Guess label</th>
+            <th style="text-align: center">Video</th>
+			<th class="green-text" style="text-align: center">Guess label</th>
+            <th style="text-align: center">True label</th>
+			</tr>
+			</thead>
+            <tbody>
+                <tr>
+                    <td style="text-align: left;vertical-align:middle;width: 200px">1033_IEO</td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 160px;"> <source src="samples/1033_IEO_HAP_LO.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: center">
+                        <button class="button" onclick="activateButton(1)">A</button>  
+                        <button class="button" onclick="activateButton(2)">D</button>
+                        <button class="button" onclick="activateButton(3)">F</button>
+                        <button class="button" onclick="activateButton(4)">H</button>  
+                        <button class="button" onclick="activateButton(5)">N</button>
+                        <button class="button" onclick="activateButton(6)">S</button>
+
+                    </td>
+                    <td style="text-align: center"><video controls="controls" style="width: 160px;"  <source src="samples/1033_IEO_HAP_LO.mp4"></video></td>
+                    <td style="text-align: center">
+                        <button class="button" onclick="activateButton(7)">A</button>  
+                        <button class="button" onclick="activateButton(8)">D</button>
+                        <button class="button" onclick="activateButton(9)">F</button>
+                        <button class="button" onclick="activateButton(10)">H</button>  
+                        <button class="button" onclick="activateButton(11)">N</button>
+                        <button class="button" onclick="activateButton(12)">S</button>
+                    </td>
+                    <td style="text-align: center">
+                        <button class="button" onclick="toggleText(this)">Check</button>
+                        <p class="hidden"><b>happy</b><br>(A/D/F/<b>H</b>/N/S)<br>(0/0/0/<b>24</b>/6/0)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;vertical-align:middle;width: 200px">1042_IEO</td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 160px;"> <source src="samples/1042_IEO_SAD_HI.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: center">
+                        <button class="button" onclick="activateButton(1)">A</button>  
+                        <button class="button" onclick="activateButton(2)">D</button>
+                        <button class="button" onclick="activateButton(3)">F</button>
+                        <button class="button" onclick="activateButton(4)">H</button>  
+                        <button class="button" onclick="activateButton(5)">N</button>
+                        <button class="button" onclick="activateButton(6)">S</button>
+
+                    </td>
+                    <td style="text-align: center"><video controls="controls" style="width: 160px;"  <source src="samples/1042_IEO_SAD_HI.mp4"></video></td>
+                    <td style="text-align: center">
+                        <button class="button" onclick="activateButton(7)">A</button>  
+                        <button class="button" onclick="activateButton(8)">D</button>
+                        <button class="button" onclick="activateButton(9)">F</button>
+                        <button class="button" onclick="activateButton(10)">H</button>  
+                        <button class="button" onclick="activateButton(11)">N</button>
+                        <button class="button" onclick="activateButton(12)">S</button>
+                    </td>
+                    <td style="text-align: center">
+                        <button class="button" onclick="toggleText(this)">Check</button>
+                        <p class="hidden"><b>sad</b><br>(A/D/F/H/N/<b>S</b>)<br>(0/6/0/0/9/<b>15</b>)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;vertical-align:middle;width: 200px">1042_IEO</td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 160px;"> <source src="samples/1042_IEO_ANG_HI.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: center">
+                        <button class="button" onclick="activateButton(1)">A</button>  
+                        <button class="button" onclick="activateButton(2)">D</button>
+                        <button class="button" onclick="activateButton(3)">F</button>
+                        <button class="button" onclick="activateButton(4)">H</button>  
+                        <button class="button" onclick="activateButton(5)">N</button>
+                        <button class="button" onclick="activateButton(6)">S</button>
+
+                    </td>
+                    <td style="text-align: center"><video controls="controls" style="width: 160px;"  <source src="samples/1042_IEO_ANG_HI.mp4"></video></td>
+                    <td style="text-align: center">
+                        <button class="button" onclick="activateButton(7)">A</button>  
+                        <button class="button" onclick="activateButton(8)">D</button>
+                        <button class="button" onclick="activateButton(9)">F</button>
+                        <button class="button" onclick="activateButton(10)">H</button>  
+                        <button class="button" onclick="activateButton(11)">N</button>
+                        <button class="button" onclick="activateButton(12)">S</button>
+                    </td>
+                    <td style="text-align: center">
+                        <button class="button" onclick="toggleText(this)">Check</button>
+                        <p class="hidden"><b>anger</b><br>(<b>A</b>/D/F/H/N/S)<br>(<b>28</b>/0/0/1/1/0)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;vertical-align:middle;width: 200px">1034_IEO</td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 160px;"> <source src="samples/1034_IEO_HAP_HI.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: center">
+                        <button class="button" onclick="activateButton(1)">A</button>  
+                        <button class="button" onclick="activateButton(2)">D</button>
+                        <button class="button" onclick="activateButton(3)">F</button>
+                        <button class="button" onclick="activateButton(4)">H</button>  
+                        <button class="button" onclick="activateButton(5)">N</button>
+                        <button class="button" onclick="activateButton(6)">S</button>
+
+                    </td>
+                    <td style="text-align: center"><video controls="controls" style="width: 160px;"  <source src="samples/1034_IEO_HAP_HI.mp4"></video></td>
+                    <td style="text-align: center">
+                        <button class="button" onclick="activateButton(7)">A</button>  
+                        <button class="button" onclick="activateButton(8)">D</button>
+                        <button class="button" onclick="activateButton(9)">F</button>
+                        <button class="button" onclick="activateButton(10)">H</button>  
+                        <button class="button" onclick="activateButton(11)">N</button>
+                        <button class="button" onclick="activateButton(12)">S</button>
+                    </td>
+                    <td style="text-align: center">
+                        <button class="button" onclick="toggleText(this)">Check</button>
+                        <p class="hidden"><b>happy</b><br>(A/D/F/<b>H</b>/N/S)<br>(2/10/1/<b>12</b>/1/2)</p>
+                    </td>
+                </tr>                
+            </tbody>
+        </table>
+        <script>
+            let activeButtons = new Map();
+        
+            function activateButton(buttonId) {
+              const currentButton = event.currentTarget;
+              const currentCell = currentButton.parentNode;
+        
+              if (!activeButtons.has(currentCell)) {
+                activeButtons.set(currentCell, null);
+              }
+        
+              if (activeButtons.get(currentCell)) {
+                activeButtons.get(currentCell).classList.remove("active");
+              }
+              currentButton.classList.add("active");
+              activeButtons.set(currentCell, currentButton);
+            }
+
+            function showText() {
+            const displayTextElement = document.getElementById("displayText");
+            if (displayTextElement.style.display === "none") {
+                displayTextElement.style.display = "block";
+            } else {
+                displayTextElement.style.display = "none";
+            }
+            }
+            function toggleText(button) {
+            const textElement = button.nextElementSibling;
+            textElement.classList.toggle("hidden");
+            }
+          </script>
+    </div>
