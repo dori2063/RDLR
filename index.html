@@ -14,6 +14,13 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+            video {
+      width: 100%; /* 비디오의 너비를 100%로 설정하여 부모 요소에 맞게 조절합니다. */
+      height: auto; /* 높이를 자동으로 조정하여 비율을 유지합니다. */
+      max-width: 1000px; /* 비디오의 최대 너비를 설정하여 너무 커지는 것을 방지합니다. */
+      display: block; /* 비디오를 블록 요소로 표시하여 다른 요소와 줄을 공유하지 않습니다. */
+      margin: 0 auto; /* 가운데 정렬을 위해 왼쪽과 오른쪽 여백을 자동으로 설정합니다. */
+    }
             table {
       border-collapse: collapse;
     }
@@ -50,7 +57,7 @@
 
 <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
 	<div class="text-center">
-	<h1>Speech Emotion Recognition Incorporating Relative Difficulty and Labeling Reliability</h1>
+	<h1>Speech Emotion Recognition Incorporating <br>Relative Difficulty and Labeling Reliability</h1>
         <h3>Guess emotional state for the utterance-level speech</h3>
         <p class="fst-italic mb-0">
           <br>
@@ -71,7 +78,7 @@
 </div>
 		
     <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
-        <h2 id="iem-samples" style="text-align: left;">IEMOCAP examples</h2>
+        <h2 id="iem-samples" style="text-align: center;">IEMOCAP examples</h2>
         <p> Each example is annotated by three evaluators. <br>
             Evaluators watched the conversational video and labeled among "<b>A</b>nger, <b>D</b>isgust, <b>F</b>rustration, <b>H</b>appy (excited), <b>N</b>eutral, <b>S</b>ad, surprise, fear, and other". 
             <br><b>True label</b> stands for the majority vote result of the evaluations. <br>
@@ -93,37 +100,37 @@
                 <tbody>
                     <tr>
                         <td style="text-align: left;vertical-align:middle;width: 100px">1</td>
-                        <td style="text-align: center"><audio controls="controls" style="width: 160px;"> <source src="samples/Ses01F_impro04_F030.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                        <td style="text-align: center">
+                        <td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 160px;"> <source src="samples/Ses01F_impro04_F030.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                        <td style="text-align: center;vertical-align:middle;width: 150px">
                             <button class="button" onclick="activateButton(1)">A</button>  
                             <button class="button" onclick="activateButton(2)">D</button>
-                            <button class="button" onclick="activateButton(3)">F</button>
+                            <button class="button" onclick="activateButton(3)">F</button><br>
                             <button class="button" onclick="activateButton(4)">H</button>  
                             <button class="button" onclick="activateButton(5)">N</button>
                             <button class="button" onclick="activateButton(6)">S</button>
                         </td>
-                        <td style="text-align: center"><video controls="controls" style="width: 160px;"  <source src="samples/Ses01F_impro04_F030.mp4"></video></td>
-                        <td style="text-align: center">
+                        <td style="text-align: center;vertical-align:middle"><video controls="controls"  <source src="samples/Ses01F_impro04_F030.mp4"></video></td>
+                        <td style="text-align: center;vertical-align:middle;width: 150px">
                             <button class="button" onclick="activateButton(7)">A</button>  
                             <button class="button" onclick="activateButton(8)">D</button>
-                            <button class="button" onclick="activateButton(9)">F</button>
+                            <button class="button" onclick="activateButton(9)">F</button><br>
                             <button class="button" onclick="activateButton(10)">H</button>  
                             <button class="button" onclick="activateButton(11)">N</button>
                             <button class="button" onclick="activateButton(12)">S</button>
                         </td>
-                        <td style="text-align: center">
+                        <td style="text-align: center;vertical-align:middle">
                             <button class="button" onclick="toggleText(this)">Read</button>
                             <p class="hidden">...<br>[M] ...you can't get a job and refuse to have a resume.<br>[F] Who do you think you are?<br> [M] I don't think I'm anyone.<br>[F] <b>You are so high and mighty.  I just--</b></p>
                         </td>
-                        <td style="text-align: center">
+                        <td style="text-align: center;vertical-align:middle;width: 150px">
                             <button class="button" onclick="activateButton(7)">A</button>  
                             <button class="button" onclick="activateButton(8)">D</button>
-                            <button class="button" onclick="activateButton(9)">F</button>
+                            <button class="button" onclick="activateButton(9)">F</button><br>
                             <button class="button" onclick="activateButton(10)">H</button>  
                             <button class="button" onclick="activateButton(11)">N</button>
                             <button class="button" onclick="activateButton(12)">S</button>
                         </td>
-                        <td style="text-align: center">
+                        <td style="text-align: center;vertical-align:middle">
                             <button class="button" onclick="toggleText(this)">Check</button>
                             <p class="hidden"><b>anger</b><br>(<b>A</b>/D/F/H/N/S)<br>(3/0/0/0/0/0)</p>
                         </td>
@@ -131,37 +138,37 @@
                     
                     <tr>
                         <td style="text-align: left;vertical-align:middle;width: 100px">2</td>
-                        <td style="text-align: center"><audio controls="controls" style="width: 160px;"> <source src="samples/Ses05F_impro07_F037.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                        <td style="text-align: center">
+                        <td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 160px;"> <source src="samples/Ses05F_impro07_F037.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                        <td style="text-align: center;vertical-align:middle">
                             <button class="button" onclick="activateButton(1)">A</button>  
                             <button class="button" onclick="activateButton(2)">D</button>
-                            <button class="button" onclick="activateButton(3)">F</button>
+                            <button class="button" onclick="activateButton(3)">F</button><br>
                             <button class="button" onclick="activateButton(4)">H</button>  
                             <button class="button" onclick="activateButton(5)">N</button>
                             <button class="button" onclick="activateButton(6)">S</button>
                         </td>
-                        <td style="text-align: center"><video controls="controls" style="width: 160px;"  <source src="samples/Ses05F_impro07_F037.mp4"></video></td>
-                        <td style="text-align: center">
+                        <td style="text-align: center;vertical-align:middle"><video controls="controls"  <source src="samples/Ses05F_impro07_F037.mp4"></video></td>
+                        <td style="text-align: center;vertical-align:middle">
                             <button class="button" onclick="activateButton(7)">A</button>  
                             <button class="button" onclick="activateButton(8)">D</button>
-                            <button class="button" onclick="activateButton(9)">F</button>
+                            <button class="button" onclick="activateButton(9)">F</button><br>
                             <button class="button" onclick="activateButton(10)">H</button>  
                             <button class="button" onclick="activateButton(11)">N</button>
                             <button class="button" onclick="activateButton(12)">S</button>
                         </td>
-                        <td style="text-align: center">
+                        <td style="text-align: center;vertical-align:middle">
                             <button class="button" onclick="toggleText(this)">Read</button>
                             <p class="hidden"> ...<br>[M] That's a good idea.<br>[F] Let's go tomorrow.<br> [M] Tomorrow, tomorrow, tomorrow-<br>[F] <b>yeah.</b></p>
                         </td>
-                        <td style="text-align: center">
+                        <td style="text-align: center;vertical-align:middle">
                             <button class="button" onclick="activateButton(7)">A</button>  
                             <button class="button" onclick="activateButton(8)">D</button>
-                            <button class="button" onclick="activateButton(9)">F</button>
+                            <button class="button" onclick="activateButton(9)">F</button><br>
                             <button class="button" onclick="activateButton(10)">H</button>  
                             <button class="button" onclick="activateButton(11)">N</button>
                             <button class="button" onclick="activateButton(12)">S</button>
                         </td>
-                        <td style="text-align: center">
+                        <td style="text-align: center;vertical-align:middle">
                             <button class="button" onclick="toggleText(this)">Check</button>
                             <p class="hidden"><b>happy (excited)</b><br>(A/D/F/<b>H</b>/N/S)<br>(0/0/0/3/0/0)</p>
                         </td>
@@ -169,37 +176,37 @@
 
                     <tr>
                         <td style="text-align: left;vertical-align:middle;width: 100px">3</td>
-                        <td style="text-align: center"><audio controls="controls" style="width: 160px;"> <source src="samples/Ses05M_script02_2_M028.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                        <td style="text-align: center">
+                        <td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 160px;"> <source src="samples/Ses05M_script02_2_M028.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                        <td style="text-align: center;vertical-align:middle">
                             <button class="button" onclick="activateButton(1)">A</button>  
                             <button class="button" onclick="activateButton(2)">D</button>
-                            <button class="button" onclick="activateButton(3)">F</button>
+                            <button class="button" onclick="activateButton(3)">F</button><br>
                             <button class="button" onclick="activateButton(4)">H</button>  
                             <button class="button" onclick="activateButton(5)">N</button>
                             <button class="button" onclick="activateButton(6)">S</button>
                         </td>
-                        <td style="text-align: center"><video controls="controls" style="width: 160px;"  <source src="samples/Ses05M_script02_2_M028.mp4"></video></td>
-                        <td style="text-align: center">
+                        <td style="text-align: center;vertical-align:middle"><video controls="controls"  <source src="samples/Ses05M_script02_2_M028.mp4"></video></td>
+                        <td style="text-align: center;vertical-align:middle">
                             <button class="button" onclick="activateButton(7)">A</button>  
                             <button class="button" onclick="activateButton(8)">D</button>
-                            <button class="button" onclick="activateButton(9)">F</button>
+                            <button class="button" onclick="activateButton(9)">F</button><br>
                             <button class="button" onclick="activateButton(10)">H</button>  
                             <button class="button" onclick="activateButton(11)">N</button>
                             <button class="button" onclick="activateButton(12)">S</button>
                         </td>
-                        <td style="text-align: center">
+                        <td style="text-align: center;vertical-align:middle">
                             <button class="button" onclick="toggleText(this)">Read</button>
                             <p class="hidden"> ...<br>[F] This?  What is this?  This isn't even anything.<br>[M] Yes, it is.<br> [F] Sure, this is standing on the beach.<br>This is waiting.  This is fighting.<br>[M] <b>Right.</b></p>
                         </td>
-                        <td style="text-align: center">
+                        <td style="text-align: center;vertical-align:middle">
                             <button class="button" onclick="activateButton(7)">A</button>  
                             <button class="button" onclick="activateButton(8)">D</button>
-                            <button class="button" onclick="activateButton(9)">F</button>
+                            <button class="button" onclick="activateButton(9)">F</button><br>
                             <button class="button" onclick="activateButton(10)">H</button>  
                             <button class="button" onclick="activateButton(11)">N</button>
                             <button class="button" onclick="activateButton(12)">S</button>
                         </td>
-                        <td style="text-align: center">
+                        <td style="text-align: center;vertical-align:middle">
                             <button class="button" onclick="toggleText(this)">Check</button>
                             <p class="hidden"><b>frustration</b><br>(A/D/<b>F</b>/H/N/S)<br>(1/0/2/0/0/0)</p>
                         </td>
@@ -207,37 +214,37 @@
                 
                     <tr>
                         <td style="text-align: left;vertical-align:middle;width: 100px">4</td>
-                        <td style="text-align: center"><audio controls="controls" style="width: 160px;"> <source src="samples/Ses04M_impro03_M022.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                        <td style="text-align: center">
+                        <td style="text-align: center;vertical-align:middle"><audio controls="controls" style="width: 160px;"> <source src="samples/Ses04M_impro03_M022.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                        <td style="text-align: center;vertical-align:middle">
                             <button class="button" onclick="activateButton(1)">A</button>  
                             <button class="button" onclick="activateButton(2)">D</button>
-                            <button class="button" onclick="activateButton(3)">F</button>
+                            <button class="button" onclick="activateButton(3)">F</button><br>
                             <button class="button" onclick="activateButton(4)">H</button>  
                             <button class="button" onclick="activateButton(5)">N</button>
                             <button class="button" onclick="activateButton(6)">S</button>
                         </td>
-                        <td style="text-align: center"><video controls="controls" style="width: 160px;"  <source src="samples/Ses04M_impro03_M022.mp4"></video></td>
-                        <td style="text-align: center">
+                        <td style="text-align: center;vertical-align:middle"><video controls="controls"  <source src="samples/Ses04M_impro03_M022.mp4"></video></td>
+                        <td style="text-align: center;vertical-align:middle">
                             <button class="button" onclick="activateButton(7)">A</button>  
                             <button class="button" onclick="activateButton(8)">D</button>
-                            <button class="button" onclick="activateButton(9)">F</button>
+                            <button class="button" onclick="activateButton(9)">F</button><br>
                             <button class="button" onclick="activateButton(10)">H</button>  
                             <button class="button" onclick="activateButton(11)">N</button>
                             <button class="button" onclick="activateButton(12)">S</button>
                         </td>
-                        <td style="text-align: center">
+                        <td style="text-align: center;vertical-align:middle">
                             <button class="button" onclick="toggleText(this)">Read</button>
                             <p class="hidden"> ...<br>[F] I'm so excited for you. That's great. I'm so-  This isn't even anything.<br> [M] Yeah, yeah. She was actually -- she was going to tell you but I told her that I wanted to tell you and she had to work today anyway, so I decided to- <br>[F] Well I'm glad you told me.<br>[M] <b>Yeah, yeah.</b></p>
                         </td>
-                        <td style="text-align: center">
+                        <td style="text-align: center;vertical-align:middle">
                             <button class="button" onclick="activateButton(7)">A</button>  
                             <button class="button" onclick="activateButton(8)">D</button>
-                            <button class="button" onclick="activateButton(9)">F</button>
+                            <button class="button" onclick="activateButton(9)">F</button><br>
                             <button class="button" onclick="activateButton(10)">H</button>  
                             <button class="button" onclick="activateButton(11)">N</button>
                             <button class="button" onclick="activateButton(12)">S</button>
                         </td>
-                        <td style="text-align: center">
+                        <td style="text-align: center;vertical-align:middle">
                             <button class="button" onclick="toggleText(this)">Check</button>
                             <p class="hidden"><b>happy (excited)</b><br>(A/D/F/<b>H</b>/N/S)<br>(0/0/0/2/1/0)</p>
                         </td>
